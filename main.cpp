@@ -16,12 +16,12 @@ video: Chapter 2 - Part 3
  
  1) Write down the names of the 6 major primitive types available in C++  here:
  
- 
- 
- 
- 
- 
- 
+ int
+ float
+ double
+ bool
+ unsigned int
+ char    
  
  
  
@@ -65,9 +65,32 @@ void variableDeclarations()
     //example:
     int number = 2; //declaration of a variable named "number", that uses the primitive type 'int', and the variable's initial value is '2'
     
+    int scaleDegree = 4;
+    int lemons = 14;
+    int guitarStringNumber = 3;
+
+    float frequency = 265.8f;
+    float gain = 17.2f;
+    float qFactor = 0.8f;
+
+    double gainReduction = 15.8;
+    double attackTime = 27.2;
+    double makeUpGain = 22.8;
+
+    bool isRaining = true;
+    bool isDay = false;
+    bool isAfternoon = false;
+
+    unsigned int distance = 14;
+    unsigned int kelvinTemperature = 2;
+    unsigned int index = 128;
+
+    char letter = 'e';
+    char letter2 = 'g';
+    char character = 'f';
 
     
-    ignoreUnused(number); //passing each variable declared to the ignoreUnused() function
+    ignoreUnused(number, scaleDegree, lemons, guitarStringNumber, frequency, gain, qFactor, gainReduction, attackTime, makeUpGain, isRaining, isDay, isAfternoon, distance, kelvinTemperature, index, letter, letter2, character); //passing each variable declared to the ignoreUnused() function
 }
 
 /*
@@ -84,43 +107,81 @@ bool rentACar(int rentalDuration, int carType = 0)  //function declaration with 
 /*
  1)
  */
-
+float eqChange(float gain, float frequency = 18.5f, bool bypass = false)
+{
+    ignoreUnused(gain, frequency, bypass);
+    return{};
+}
 /*
  2)
  */
-
+bool weatherConditions(int temperature, float humidity, bool isNight = true)
+{
+    ignoreUnused(temperature, humidity, isNight);
+    return {};
+}
 /*
  3)
  */
-
+void rating(float stars, int numbersOfReviews = 384)
+{
+    ignoreUnused(stars, numbersOfReviews);
+}
 /*
  4)
  */
-
+double rectangularRoomVolume(double length = 3.84, double width = 8.62, double height = 4.1)
+{
+    ignoreUnused(length, width, height);
+    return{};
+}
 /*
  5)
  */
-
+bool canMakePasta(int numberOfTomatos, bool hasPasta)
+{
+    ignoreUnused(numberOfTomatos, hasPasta);
+    return{};
+}
 /*
  6)
  */
-
+int numberOfPoints (int twoPointFieldGoals, int threePointFieldGoals = 4)
+{
+    ignoreUnused(twoPointFieldGoals, threePointFieldGoals);
+    return{};
+}
 /*
  7)
  */
-
+bool sustainPedalOn(bool isPedalPressed, int midiMessage = 64)
+{
+    ignoreUnused(isPedalPressed, midiMessage);
+    return{};
+}
 /*
  8)
  */
-
+float averageHeight(float height, int numberOfPeople = 28)
+{
+    ignoreUnused(height, numberOfPeople);
+    return{};
+}
 /*
  9)
  */
-
+float investmentReturn(float initialInvestment, float returnRate = 4.6f)
+{
+    ignoreUnused(initialInvestment, returnRate);
+    return{};
+}
 /*
  10)
  */
-
+void averageAge(int age, int numberOfParticipants)
+{
+    ignoreUnused(age, numberOfParticipants);
+}
 /*
  MAKE SURE YOU ARE NOT ON THE MASTER BRANCH
 
@@ -141,27 +202,27 @@ int main()
     auto carRented = rentACar(6, 2); 
     
     //1)
-    
+    auto eqChanged = eqChange(7.4f);
     //2)
-    
+    auto weather = weatherConditions(21, 64.2f, false);
     //3)
-    
+    rating(4.8f);
     //4)
-    
+    auto roomVolume = rectangularRoomVolume(4.68, 5.49, 7.31);
     //5)
-    
+    auto pasta = canMakePasta(5,true);
     //6)
-    
+    auto points = numberOfPoints(14);
     //7)
-    
+    auto sustainPedal = sustainPedalOn(false);
     //8)
-    
+    auto heightValue = averageHeight (1.81f, 14);
     //9)
-    
+    auto investmentProfit = investmentReturn(32.5f);
     //10)
+    averageAge(28, 34);
     
-    
-    ignoreUnused(carRented);
+    ignoreUnused(carRented, eqChanged, weather, rating, roomVolume, pasta, points, sustainPedal, heightValue, investmentProfit, averageAge);
     std::cout << "good to go!" << std::endl;
     return 0;    
 }
