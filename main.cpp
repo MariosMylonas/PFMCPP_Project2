@@ -16,12 +16,12 @@ video: Chapter 2 - Part 3
  
  1) Write down the names of the 6 major primitive types available in C++  here:
  
- 
- 
- 
- 
- 
- 
+ int
+ float
+ double
+ bool
+ unsigned int
+ char    
  
  
  
@@ -65,9 +65,32 @@ void variableDeclarations()
     //example:
     int number = 2; //declaration of a variable named "number", that uses the primitive type 'int', and the variable's initial value is '2'
     
+    int scaleDegree = 4;
+    int lemons = 14;
+    int guitarStringNumber = 3;
+
+    float frequency = 265.8f;
+    float gain = 17.2f;
+    float qFactor = 0.8f;
+
+    double gainReduction = 15.8;
+    double attackTime = 27.2;
+    double makeUpGain = 22.8;
+
+    bool isRaining = true;
+    bool isDay = false;
+    bool isAfternoon = false;
+
+    unsigned int distance = 14;
+    unsigned int kelvinTemperature = 2;
+    unsigned int index = 128;
+
+    char letter = 'e';
+    char letter2 = 'g';
+    char character = 'f';
 
     
-    ignoreUnused(number); //passing each variable declared to the ignoreUnused() function
+    ignoreUnused(number, scaleDegree, lemons, guitarStringNumber, frequency, gain, qFactor, gainReduction, attackTime, makeUpGain, isRaining, isDay, isAfternoon, distance, kelvinTemperature, index, letter, letter2, character); //passing each variable declared to the ignoreUnused() function
 }
 
 /*
@@ -84,43 +107,81 @@ bool rentACar(int rentalDuration, int carType = 0)  //function declaration with 
 /*
  1)
  */
-
+float computeFilterParameters(float gain, float frequency = 18.5f, bool bypass = false)
+{
+    ignoreUnused(gain, frequency, bypass);
+    return{};
+}
 /*
  2)
  */
-
+bool calculateWeatherConditions(int temperature, float humidity, bool isNight = true)
+{
+    ignoreUnused(temperature, humidity, isNight);
+    return {};
+}
 /*
  3)
  */
-
+void evaluateRating(float stars, int numbersOfReviews = 384)
+{
+    ignoreUnused(stars, numbersOfReviews);
+}
 /*
  4)
  */
-
+double calculateRectangularRoomVolume(double length = 3.84, double width = 8.62, double height = 4.1)
+{
+    ignoreUnused(length, width, height);
+    return{};
+}
 /*
  5)
  */
-
+bool canMakePasta(int numberOfTomatos, bool hasPasta)
+{
+    ignoreUnused(numberOfTomatos, hasPasta);
+    return{};
+}
 /*
  6)
  */
-
+int calculateNumberOfPoints (int twoPointFieldGoals, int threePointFieldGoals = 4)
+{
+    ignoreUnused(twoPointFieldGoals, threePointFieldGoals);
+    return{};
+}
 /*
  7)
  */
-
+bool determineIfSustainPedalOn(bool isPedalPressed, int midiMessage = 64)
+{
+    ignoreUnused(isPedalPressed, midiMessage);
+    return{};
+}
 /*
  8)
  */
-
+float computeAverageHeight(float height, int numberOfPeople = 28)
+{
+    ignoreUnused(height, numberOfPeople);
+    return{};
+}
 /*
  9)
  */
-
+float calculateInvestmentReturn(float initialInvestment, float returnRate = 4.6f)
+{
+    ignoreUnused(initialInvestment, returnRate);
+    return{};
+}
 /*
  10)
  */
-
+void calculateAverageAge(int age, int numberOfParticipants)
+{
+    ignoreUnused(age, numberOfParticipants);
+}
 /*
  MAKE SURE YOU ARE NOT ON THE MASTER BRANCH
 
@@ -141,27 +202,27 @@ int main()
     auto carRented = rentACar(6, 2); 
     
     //1)
-    
+    auto filterParameters = computeFilterParameters(7.4f);
     //2)
-    
+    auto weather = calculateWeatherConditions(21, 64.2f, false);
     //3)
-    
+    evaluateRating(4.8f);
     //4)
-    
+    auto roomVolume = calculateRectangularRoomVolume(4.68, 5.49, 7.31);
     //5)
-    
+    auto pasta = canMakePasta(5,true);
     //6)
-    
+    auto points = calculateNumberOfPoints(14);
     //7)
-    
+    auto sustainPedal = determineIfSustainPedalOn(false);
     //8)
-    
+    auto heightValue = computeAverageHeight (1.81f, 14);
     //9)
-    
+    auto investmentProfit = calculateInvestmentReturn(32.5f);
     //10)
+    calculateAverageAge(28, 34);
     
-    
-    ignoreUnused(carRented);
+    ignoreUnused(carRented, filterParameters, weather, evaluateRating, roomVolume, pasta, points, sustainPedal, heightValue, investmentProfit, calculateAverageAge);
     std::cout << "good to go!" << std::endl;
     return 0;    
 }
