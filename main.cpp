@@ -107,7 +107,7 @@ bool rentACar(int rentalDuration, int carType = 0)  //function declaration with 
 /*
  1)
  */
-float eqChange(float gain, float frequency = 18.5f, bool bypass = false)
+float computeFilterParameters(float gain, float frequency = 18.5f, bool bypass = false)
 {
     ignoreUnused(gain, frequency, bypass);
     return{};
@@ -115,7 +115,7 @@ float eqChange(float gain, float frequency = 18.5f, bool bypass = false)
 /*
  2)
  */
-bool weatherConditions(int temperature, float humidity, bool isNight = true)
+bool calculateWeatherConditions(int temperature, float humidity, bool isNight = true)
 {
     ignoreUnused(temperature, humidity, isNight);
     return {};
@@ -123,14 +123,14 @@ bool weatherConditions(int temperature, float humidity, bool isNight = true)
 /*
  3)
  */
-void rating(float stars, int numbersOfReviews = 384)
+void evaluateRating(float stars, int numbersOfReviews = 384)
 {
     ignoreUnused(stars, numbersOfReviews);
 }
 /*
  4)
  */
-double rectangularRoomVolume(double length = 3.84, double width = 8.62, double height = 4.1)
+double calculateRectangularRoomVolume(double length = 3.84, double width = 8.62, double height = 4.1)
 {
     ignoreUnused(length, width, height);
     return{};
@@ -146,7 +146,7 @@ bool canMakePasta(int numberOfTomatos, bool hasPasta)
 /*
  6)
  */
-int numberOfPoints (int twoPointFieldGoals, int threePointFieldGoals = 4)
+int calculateNumberOfPoints (int twoPointFieldGoals, int threePointFieldGoals = 4)
 {
     ignoreUnused(twoPointFieldGoals, threePointFieldGoals);
     return{};
@@ -154,7 +154,7 @@ int numberOfPoints (int twoPointFieldGoals, int threePointFieldGoals = 4)
 /*
  7)
  */
-bool sustainPedalOn(bool isPedalPressed, int midiMessage = 64)
+bool determineIfSustainPedalOn(bool isPedalPressed, int midiMessage = 64)
 {
     ignoreUnused(isPedalPressed, midiMessage);
     return{};
@@ -162,7 +162,7 @@ bool sustainPedalOn(bool isPedalPressed, int midiMessage = 64)
 /*
  8)
  */
-float averageHeight(float height, int numberOfPeople = 28)
+float computeAverageHeight(float height, int numberOfPeople = 28)
 {
     ignoreUnused(height, numberOfPeople);
     return{};
@@ -170,7 +170,7 @@ float averageHeight(float height, int numberOfPeople = 28)
 /*
  9)
  */
-float investmentReturn(float initialInvestment, float returnRate = 4.6f)
+float calculateInvestmentReturn(float initialInvestment, float returnRate = 4.6f)
 {
     ignoreUnused(initialInvestment, returnRate);
     return{};
@@ -178,7 +178,7 @@ float investmentReturn(float initialInvestment, float returnRate = 4.6f)
 /*
  10)
  */
-void averageAge(int age, int numberOfParticipants)
+void calculateAverageAge(int age, int numberOfParticipants)
 {
     ignoreUnused(age, numberOfParticipants);
 }
@@ -202,27 +202,27 @@ int main()
     auto carRented = rentACar(6, 2); 
     
     //1)
-    auto eqChanged = eqChange(7.4f);
+    auto filterParameters = computeFilterParameters(7.4f);
     //2)
-    auto weather = weatherConditions(21, 64.2f, false);
+    auto weather = calculateWeatherConditions(21, 64.2f, false);
     //3)
-    rating(4.8f);
+    evaluateRating(4.8f);
     //4)
-    auto roomVolume = rectangularRoomVolume(4.68, 5.49, 7.31);
+    auto roomVolume = calculateRectangularRoomVolume(4.68, 5.49, 7.31);
     //5)
     auto pasta = canMakePasta(5,true);
     //6)
-    auto points = numberOfPoints(14);
+    auto points = calculateNumberOfPoints(14);
     //7)
-    auto sustainPedal = sustainPedalOn(false);
+    auto sustainPedal = determineIfSustainPedalOn(false);
     //8)
-    auto heightValue = averageHeight (1.81f, 14);
+    auto heightValue = computeAverageHeight (1.81f, 14);
     //9)
-    auto investmentProfit = investmentReturn(32.5f);
+    auto investmentProfit = calculateInvestmentReturn(32.5f);
     //10)
-    averageAge(28, 34);
+    calculateAverageAge(28, 34);
     
-    ignoreUnused(carRented, eqChanged, weather, rating, roomVolume, pasta, points, sustainPedal, heightValue, investmentProfit, averageAge);
+    ignoreUnused(carRented, filterParameters, weather, evaluateRating, roomVolume, pasta, points, sustainPedal, heightValue, investmentProfit, calculateAverageAge);
     std::cout << "good to go!" << std::endl;
     return 0;    
 }
